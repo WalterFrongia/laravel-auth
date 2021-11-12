@@ -2,7 +2,7 @@
 
 @section('comics')
 
-    <form action="{{ route('comic.store')}}" method="POST">
+    <form action="{{ route('admin.comic.store')}}" method="POST">
         @csrf
 
         <input type="text" placeholder="inserisci il titolo" name="title">

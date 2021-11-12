@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ComicController extends Controller
 {
@@ -16,7 +17,7 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
 
-        return view('comics.index', compact('comics')); //compact riporta la variabile che ha il model
+        return view('admin.comics.index', compact('comics')); //compact riporta la variabile che ha il model
     }
 
     /**
@@ -26,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        return view('comics.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -44,7 +45,7 @@ class ComicController extends Controller
         //per salvare nel db
         $comic -> save(); 
         //apro la pagina index
-        return redirect()->route('comic.index');
+        return redirect()->route('admin.comic.index');
     }
 
     /**
@@ -57,7 +58,7 @@ class ComicController extends Controller
     {
         $comic = Comic::findOrFail($id);
 
-        return view('comics.show' , compact('comic'));
+        return view('admin.comics.show' , compact('comic'));
     }
 
     /**
@@ -70,7 +71,7 @@ class ComicController extends Controller
     {
         $comic = Comic::findOrFail($id);
         //return di edit come in create
-        return view('comics.edit' ,compact('comic'));
+        return view('admin.comics.edit' ,compact('comic'));
     }
 
     /**
@@ -85,7 +86,7 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
         $comic->update($request->all());
         // dd($request->all());
-        return redirect()->route('comic.index');
+        return redirect()->route('admin.comic.index');
     }
 
     /**

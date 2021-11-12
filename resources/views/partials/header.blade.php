@@ -7,7 +7,7 @@
         <form action="" method="GET">
             <input type="search" id="navbar-search" placeholder="search comic">
         </form>
-        <a class="button" href="{{ route('comic.create')}}">ADD COMIC</a>
+        <a class="button" href="{{ route('admin.comic.create')}}">ADD COMIC</a>
         
     </div>
 

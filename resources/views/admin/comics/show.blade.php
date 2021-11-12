@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <a href="{{ route('comic.edit' ,  $comic->id)}}"><button>EDIT COMIC</button></a>
+        <a href="{{ route('admin.comic.edit' ,  $comic->id)}}"><button>EDIT COMIC</button></a>
     </div>
 
 @endsection

@@ -22,4 +22,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('comic','ComicController');
+Route::middleware('auth')
+    ->namespace('Admin') //Indica la cartella che si riferisce al controller che gestisce il database e le crud
+    ->name('admin.') //per aggiungere admin all'inizio di ogni nome della rotta
+    ->prefix('admin')// fa riferimneto all'URL, prima del nome cartella si inserisce il nome del prefix
+    ->group (function () {
+        Route::resource('comic','ComicController');
+});

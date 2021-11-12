@@ -2,7 +2,7 @@
 
 @section('comics')
 
-<form action="{{route('comic.update', $comic->id)}}" method="POST">
+<form action="{{route('admin.comic.update', $comic->id)}}" method="POST">
         @csrf
         @method('PUT')
 

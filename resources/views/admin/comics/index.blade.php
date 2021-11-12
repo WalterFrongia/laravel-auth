@@ -6,7 +6,7 @@
             @foreach($comics as $comic)
                 <div id="comic">
                     <img src="{{$comic->url_img}}" alt="{{$comic->name}}">
-                    <a href="{{ route('comic.show' , $comic->id)}}">{{$comic->title}}</a>
+                    <a href="{{ route('admin.comic.show' , $comic->id)}}">{{$comic->title}}</a>
                 </div>
             @endforeach
         </div>
